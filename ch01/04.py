@@ -16,8 +16,6 @@ def chemical_symbol(sentence: str) :
         else :
             chemical_symbol_list[word[:2]] = i            
 
-
-    chemical_symbol_list = {}
     return chemical_symbol_list
 
 chemical_symbol("Hi He Lied Because Boron Could Not Oxidize Fluorine.\
