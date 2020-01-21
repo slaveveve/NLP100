@@ -32,9 +32,17 @@ for temp in find_temp :
 
     #TODO 途中　ここから
     value_splited_markdown = value_splited_innner_link
-    value_splited_markdown = re.sub(r'(<.*?/>)(</.*?>)(\{\{.*?\}\})', '', value_splited_innner_link)
+    # value_splited_markdown = re.sub(r'(<.*?/>)(</.*?>)(\{\{.*?\}\})', '', value_splited_innner_link)
+
+    # 改行変換
+    value_splited_markdown = re.sub(r'<br\s*?/>', '\n', value_splited_markdown)
+    # <ref>タグ除去
+    value_splited_markdown = re.sub(r'(?s)<ref[^>]*?/>|<ref[^>]*?>.*?</ref>', '', value_splited_markdown)
+    # {{lang}}タグ変換
+    value_splited_markdown = re.sub(r'{{lang\|.*?\|(.*?)}}', '\\1', value_splited_markdown)
 
     temp_dict[key] = value_splited_markdown
 
 pprint.pprint(temp_dict)
+
 
