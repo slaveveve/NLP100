@@ -30,7 +30,6 @@ for temp in find_temp :
     value_splited_innner_link = value_splited_emphasized
     value_splited_innner_link = re.sub(r'\[\[([^|\]]+\|)*(.*?)\]\]', '\\2', value_splited_emphasized)
 
-    #TODO 途中　ここから
     value_splited_markdown = value_splited_innner_link
     # value_splited_markdown = re.sub(r'(<.*?/>)(</.*?>)(\{\{.*?\}\})', '', value_splited_innner_link)
 
